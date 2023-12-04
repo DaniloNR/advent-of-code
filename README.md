@@ -58,7 +58,3 @@ If you have different or more optimized solutions, feel free to contribute! Foll
 This repository is licensed under the [MIT License](LICENSE). Feel free to use and modify the code as needed.
 
 Happy coding! 🤓
-
-```
-
-```
