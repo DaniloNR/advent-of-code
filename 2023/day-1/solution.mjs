@@ -1,5 +1,3 @@
-"module";
-
 import fs from "fs";
 
 function getInputData() {
@@ -58,11 +56,11 @@ function getDigitsFromCalibration(calibration, spelledDigits = []) {
 function main() {
   const lines = getInputData();
 
-  console.time("1");
+  console.time("Part 1");
   const result1 = lines.reduce((acc, line) => {
     return acc + getDigitsFromCalibration(line);
   }, 0);
-  console.timeEnd("1");
+  console.timeEnd("Part 1");
 
   const spelled = [
     "one",
@@ -76,13 +74,13 @@ function main() {
     "nine",
   ];
 
-  console.time("2");
+  console.time("Part 2");
   const result2 = lines.reduce((acc, line) => {
     return acc + getDigitsFromCalibration(line, spelled);
   }, 0);
-  console.timeEnd("2");
+  console.timeEnd("Part 2");
 
   return [result1, result2];
 }
 
-main();
+console.log(main());
