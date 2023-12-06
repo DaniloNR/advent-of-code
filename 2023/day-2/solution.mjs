@@ -27,7 +27,7 @@ function toSetsOfCubes(acc, set) {
 }
 
 function computePossibleGamesWithCubes(games, red = 0, green = 0, blue = 0) {
-  const possibles = new Map();
+  let possibles = 0;
   const compare = {
     red: (num) => parseInt(num) <= red,
     green: (num) => parseInt(num) <= green,
@@ -41,7 +41,7 @@ function computePossibleGamesWithCubes(games, red = 0, green = 0, blue = 0) {
       isPlayPossible.push(cubes.every(([color, num]) => compare[color](num)));
     }
     if (!isPlayPossible.includes(false)) {
-      possibles.set(id, game);
+      possibles += id;
     }
   }
   return possibles;
@@ -73,7 +73,7 @@ function main() {
   const least = computeLeastAmountOfCubes(games, 12, 13, 14);
   console.timeEnd("Part 2");
 
-  return [[...possibles.keys()].reduce(toSum, 0), least];
+  return [possibles, least];
 }
 
 console.log(main());
